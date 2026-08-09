@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Админ-панель | Женская Сова</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050505; color: #e0d5c1; font-family: 'Montserrat', sans-serif; padding: 40px; }
+        h1 { font-family: 'Playfair Display', serif; color: #8B0000; text-align: center; font-size: 36px; margin-bottom: 40px; letter-spacing: 5px; }
+        .panel { background: #111; padding: 30px; border-radius: 15px; border: 1px solid #1a1a1a; max-width: 600px; margin: 0 auto 30px; }
+        .panel h2 { color: #8B0000; margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+        .panel input, .panel textarea { width: 100%; padding: 14px; margin: 8px 0; background: #0a0a0a; border: 1px solid #222; color: #e0d5c1; border-radius: 8px; font-size: 14px; }
+        .panel button { width: 100%; background: #8B0000; color: #fff; border: none; padding: 14px; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; border-radius: 8px; margin-top: 15px; }
+        .panel button:hover { background: #a00000; }
+    </style>
+</head>
+<body>
+    <h1>🦉 Админ-панель</h1>
+    <div class="panel">
+        <h2>Добавить модель</h2>
+        <input type="text" id="gName" placeholder="Имя">
+        <input type="number" id="gAge" placeholder="Возраст">
+        <input type="text" id="gCity" placeholder="Город">
+        <textarea id="gDesc" placeholder="Описание" rows="3"></textarea>
+        <input type="number" id="gPrice" placeholder="Цена за час (₽)">
+        <input type="text" id="gPhoto" placeholder="Ссылка на фото">
+        <button onclick="addGirl()">Добавить модель</button>
+    </div>
+
+    <script>
+        function addGirl() {
+            const g = {
+                name: document.getElementById('gName').value,
+                age: document.getElementById('gAge').value,
+                city: document.getElementById('gCity').value,
+                desc: document.getElementById('gDesc').value,
+                price: document.getElementById('gPrice').value,
+                photo: document.getElementById('gPhoto').value
+            };
+            if (!g.name || !g.price) return alert('Имя и цена обязательны');
+
+            const TOKEN = '8873096534:AAF4Kc2pyJhHwZkWb58NWKYdGVKDlzn0s-s';
+            const CHAT = '8535311513';
+            const msg = `🦉 *НОВАЯ МОДЕЛЬ*\n\n👤 ${g.name}, ${g.age} лет\n📍 ${g.city}\n📝 ${g.desc}\n💰 ${parseInt(g.price).toLocaleString()} ₽/час\n🖼 ${g.photo}`;
+
+            fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT}&text=${encodeURIComponent(msg)}&parse_mode=Markdown`);
+            alert('Модель отправлена в Telegram!');
+        }
+    </script>
+</body>
+</html>
