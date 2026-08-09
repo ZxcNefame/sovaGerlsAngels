@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "name": "rfhbyf",
+    "age": "22",
+    "city": "пенза",
+    "desc": "Описание",
+    "price": 6000,
+    "photo": "https://i.imgur.com/default.jpg"
+  }
+]
